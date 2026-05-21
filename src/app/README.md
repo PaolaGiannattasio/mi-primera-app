@@ -44,6 +44,7 @@ http://localhost:4200
 ---
 
 ## Estructura principal del proyecto
+Nota: La versión actual de Angular utilizada genera proyectos con arquitectura standalone, por lo que algunos archivos tradicionales como app.module.ts no se crean automáticamente.
 
 ### src/app
 
