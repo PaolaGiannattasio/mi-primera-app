@@ -1,59 +1,118 @@
-# MiPrimeraApp
+# Mi Primera App - Formulario Reactivo en Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.12.
+## Descripción del proyecto
 
-## Development server
+Este proyecto fue desarrollado como parte de la actividad "Formulario Interactivo" de la Unidad 2 del curso Angular Básico.
 
-To start a local development server, run:
+La aplicación implementa un formulario reactivo utilizando Angular Reactive Forms y las directivas integradas de Angular para proporcionar validaciones y comportamiento dinámico en la interfaz.
+
+### Funcionalidades implementadas
+
+* Formulario reactivo con FormBuilder.
+* Campo Nombre obligatorio con mínimo de 3 caracteres.
+* Campo Email obligatorio con formato válido.
+* Campo Mensaje opcional.
+* Validaciones dinámicas de los campos.
+* Uso de la directiva *ngIf para mostrar mensajes de confirmación.
+* Uso de la directiva *ngFor para listar errores de validación.
+* Uso de [ngClass] para resaltar campos inválidos.
+* Uso de [ngStyle] para modificar el color del título cuando el formulario es válido.
+* Botón de envío deshabilitado mientras el formulario sea inválido.
+* Visualización de datos enviados en la consola.
+* Reinicio automático del formulario después de un envío exitoso.
+
+## Requisitos
+
+* Node.js
+* Angular CLI
+
+## Instalación
+
+Clonar el repositorio:
+
+```bash
+git clone https://github.com/PaolaGiannattasio/mi-primera-app.git
+```
+
+Ingresar al proyecto:
+
+```bash
+cd mi-primera-app
+```
+
+Instalar dependencias:
+
+```bash
+npm install
+```
+
+## Ejecución
+
+Iniciar el servidor de desarrollo:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Abrir en el navegador:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```text
+http://localhost:4200/
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Ejemplo de salida en consola
 
-```bash
-ng generate --help
+Al enviar correctamente el formulario se muestra:
+
+```text
+Datos enviados:
+{
+  nombre: 'Pao Gianna',
+  email: 'pao@email.com',
+  mensaje: 'Hola Angular'
+}
 ```
 
-## Building
+## Estructura principal
 
-To build the project run:
-
-```bash
-ng build
+```text
+src/
+└── app/
+    ├── app.ts
+    ├── app.html
+    ├── app.css
+    └── registro/
+        ├── registro.ts
+        ├── registro.html
+        └── registro.css
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Capturas de pantalla
 
-## Running unit tests
+En la carpeta /screenshots Se incluyen capturas que muestran:
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+1. Formulario con errores de validación.
+2. Formulario válido.
+3. Mensaje de formulario enviado correctamente.
 
-```bash
-ng test
-```
+## Autor
 
-## Running end-to-end tests
+Paola Giannattasio
 
-For end-to-end (e2e) testing, run:
+Curso: Angular Básico
 
-```bash
-ng e2e
-```
+Unidad 2 - Directivas y Formularios
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Bibliografía
 
-## Additional Resources
+Angular. Reactive Forms.
+https://angular.dev/guide/forms/reactive-forms
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Angular. Built-in Directives.
+https://angular.dev/guide/directives
+
+Angular. Forms in Angular.
+https://angular.dev/guide/forms
+
+Freeman, A. Pro Angular 9. 6ª edición. Apress, 2020.
+

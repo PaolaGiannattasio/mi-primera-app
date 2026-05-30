@@ -1,0 +1,63 @@
+<h1
+  [ngStyle]="{
+    color: formulario.valid ? 'green' : 'black'
+  }"
+>
+  Formulario de Registro
+</h1>
+
+<p>Complete los datos solicitados.</p>
+
+<form [formGroup]="formulario" (ngSubmit)="enviar()">
+
+  <label>Nombre</label>
+  <input
+    type="text"
+    formControlName="nombre"
+    [ngClass]="{
+      'campo-invalido':
+      formulario.get('nombre')?.invalid &&
+      formulario.get('nombre')?.touched
+    }"
+  >
+
+  <ul *ngIf="obtenerErrores('nombre').length">
+    <li *ngFor="let error of obtenerErrores('nombre')">
+      {{ error }}
+    </li>
+  </ul>
+
+  <label>Email</label>
+  <input
+    type="email"
+    formControlName="email"
+    [ngClass]="{
+      'campo-invalido':
+      formulario.get('email')?.invalid &&
+      formulario.get('email')?.touched
+    }"
+  >
+
+  <ul *ngIf="obtenerErrores('email').length">
+    <li *ngFor="let error of obtenerErrores('email')">
+      {{ error }}
+    </li>
+  </ul>
+
+  <label>Mensaje</label>
+  <textarea formControlName="mensaje"></textarea>
+
+  <br><br>
+
+  <button
+    type="submit"
+    [disabled]="formulario.invalid"
+  >
+    Enviar
+  </button>
+
+</form>
+
+<div *ngIf="enviado">
+  <h3>Formulario enviado correctamente</h3>
+</div>

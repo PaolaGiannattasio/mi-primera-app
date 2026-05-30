@@ -1,0 +1,20 @@
+.campo-invalido {
+  border: 2px solid red;
+}
+
+input,
+textarea {
+  display: block;
+  width: 300px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+ul {
+  color: red;
+  margin-top: 0;
+}
+
+button {
+  padding: 10px;
+}
