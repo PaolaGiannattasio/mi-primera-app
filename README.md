@@ -1,25 +1,26 @@
-# Mi Primera App - Formulario Reactivo en Angular
+# Mi Primera App - Servicios y Pipes en Angular
 
 ## Descripción del proyecto
 
-Este proyecto fue desarrollado como parte de la actividad "Formulario Interactivo" de la Unidad 2 del curso Angular Básico.
+Este proyecto fue desarrollado como parte de la actividad "Gestión y visualización de datos con pipes" correspondiente al Módulo 1 - Unidad 3 de Angular Intermedio.
 
-La aplicación implementa un formulario reactivo utilizando Angular Reactive Forms y las directivas integradas de Angular para proporcionar validaciones y comportamiento dinámico en la interfaz.
+La aplicación implementa un servicio para administrar productos y utiliza pipes estándar y personalizados para transformar la información antes de mostrarla en pantalla.
 
-### Funcionalidades implementadas
+## Funcionalidades implementadas
 
-* Formulario reactivo con FormBuilder.
-* Campo Nombre obligatorio con mínimo de 3 caracteres.
-* Campo Email obligatorio con formato válido.
-* Campo Mensaje opcional.
-* Validaciones dinámicas de los campos.
-* Uso de la directiva *ngIf para mostrar mensajes de confirmación.
-* Uso de la directiva *ngFor para listar errores de validación.
-* Uso de [ngClass] para resaltar campos inválidos.
-* Uso de [ngStyle] para modificar el color del título cuando el formulario es válido.
-* Botón de envío deshabilitado mientras el formulario sea inválido.
-* Visualización de datos enviados en la consola.
-* Reinicio automático del formulario después de un envío exitoso.
+* Servicio de productos para gestionar datos.
+* Método para obtener productos (getProductos).
+* Método para agregar productos (addProducto).
+* Método para eliminar productos (deleteProducto).
+* Inyección de dependencias mediante servicios.
+* Uso del ciclo de vida ngOnInit para cargar datos iniciales.
+* Uso del pipe estándar currency para mostrar precios.
+* Uso del pipe estándar date para mostrar fechas.
+* Creación de un pipe personalizado descuento.
+* Cálculo y visualización de precios con descuento.
+* Agregado dinámico de productos.
+* Eliminación dinámica de productos.
+* Mensaje condicional cuando la lista queda vacía.
 
 ## Requisitos
 
@@ -60,19 +61,6 @@ Abrir en el navegador:
 http://localhost:4200/
 ```
 
-## Ejemplo de salida en consola
-
-Al enviar correctamente el formulario se muestra:
-
-```text
-Datos enviados:
-{
-  nombre: 'Pao Gianna',
-  email: 'pao@email.com',
-  mensaje: 'Hola Angular'
-}
-```
-
 ## Estructura principal
 
 ```text
@@ -80,39 +68,46 @@ src/
 └── app/
     ├── app.ts
     ├── app.html
-    ├── app.css
-    └── registro/
-        ├── registro.ts
-        ├── registro.html
-        └── registro.css
+    ├── producto.ts
+    ├── lista-productos/
+    │   ├── lista-productos.ts
+    │   ├── lista-productos.html
+    │   └── lista-productos.css
+    ├── servicios/
+    │   └── productos.ts
+    └── pipes/
+        └── descuento-pipe.ts
 ```
 
 ## Capturas de pantalla
 
-En la carpeta /screenshots Se incluyen capturas que muestran:
+Se incluyen capturas mostrando:
 
-1. Formulario con errores de validación.
-2. Formulario válido.
-3. Mensaje de formulario enviado correctamente.
+1. Lista de productos cargada.
+2. Aplicación del pipe currency.
+3. Aplicación del pipe date.
+4. Funcionamiento del pipe personalizado descuento.
+5. Agregado de productos.
+6. Eliminación de productos.
+7. Mensaje mostrado cuando la lista queda vacía.
 
 ## Autor
 
 Paola Giannattasio
 
-Curso: Angular Básico
+Curso: Angular Intermedio
 
-Unidad 2 - Directivas y Formularios
+Módulo 1 - Unidad 3
 
 ## Bibliografía
 
-Angular. Reactive Forms.
-https://angular.dev/guide/forms/reactive-forms
+Freeman, A. Pro Angular 9. 6ª ed. Apress; 2020.
 
-Angular. Built-in Directives.
-https://angular.dev/guide/directives
+Angular. Understanding Dependency Injection.
+https://angular.dev/guide/di/dependency-injection
 
-Angular. Forms in Angular.
-https://angular.dev/guide/forms
+Angular. Welcome to the Angular Tutorial.
+https://angular.dev/tutorials/learn-angular
 
-Freeman, A. Pro Angular 9. 6ª edición. Apress, 2020.
-
+Angular. What is Angular?
+https://angular.dev/overview
