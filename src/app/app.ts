@@ -1,18 +1,11 @@
 import { Component } from '@angular/core';
-import { Registro } from './registro/registro';
+import { ListaProductos } from './lista-productos/lista-productos';
 
 @Component({
   selector: 'app-root',
-  imports: [Registro],
+  imports: [ListaProductos],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-
-  titulo = 'Mi primera aplicación Angular';
-
-  nombre = 'Pao';
-
-  motivo = 'Quiero aprender Angular para crear aplicaciones modernas';
-
 }

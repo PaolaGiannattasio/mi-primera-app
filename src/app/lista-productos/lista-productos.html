@@ -1,0 +1,43 @@
+<h1>Lista de Productos</h1>
+
+<button (click)="agregarProducto()">
+  Agregar Producto
+</button>
+
+<hr>
+
+<div *ngIf="productos.length === 0">
+  No hay productos disponibles.
+</div>
+
+<ul *ngIf="productos.length > 0">
+
+  <li *ngFor="let producto of productos">
+
+    <h3>{{ producto.nombre }}</h3>
+
+    <p>
+      Precio:
+      {{ producto.precio | currency:'USD' }}
+    </p>
+
+    <p>
+      Fecha de alta:
+      {{ producto.fechaAlta | date:'dd/MM/yyyy' }}
+    </p>
+
+    <p>
+      Precio con descuento:
+      {{ producto.precio | descuento:10 | currency:'USD' }}
+    </p>
+
+    <button
+      (click)="eliminarProducto(producto.id)">
+      Eliminar
+    </button>
+
+    <hr>
+
+  </li>
+
+</ul>
